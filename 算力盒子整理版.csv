@@ -1,0 +1,65 @@
+序号,设备名称,核心芯片,算力,适配大模型,内存/存储,内存带宽,本地可流畅LLM,核心接口,散热/噪音,典型场景,参考价(¥),产地/生态,缺点,架构师建议,最小LLM参数量,最大LLM参数量
+1,Firefly AIBOX-3568,RK3568,1 TOPS,LLaMA.cpp、轻量端侧模型、Qwen-1.8B,4GB/8GB LPDDR4 + eMMC,6.4 GB/s,仅 4-bit 6B,千兆、HDMI、USB3.0,无风扇/静音,入门学习、轻量 AIoT,400-700,中国/开源,算力极低且带宽受限,仅作为传感器网关或跑极小SLM,0.5B,1.8B
+2,天波 V15B,RK3588,6 TOPS,LLaMA.cpp、Qwen-7B、端侧视觉模型,8GB/16GB LPDDR4X + NVMe,15 GB/s,6B/7B流畅、14B卡顿,双千兆、HDMI+DP、USB3.0、RS485,无风扇/静音,边缘视觉、国产系统适配,900-1600,中国/工业稳定,NPU工具链部署繁琐,适合轻量视觉+2B级语言模型协同,1.8B,7B
+3,Firefly AIBOX-3588S,RK3588S,6 TOPS,LLaMA.cpp、Qwen-7B、端侧视觉模型,8GB/16GB LPDDR4X + NVMe,15 GB/s,同 V15B,双千兆、HDMI+DP、USB3.0,无风扇/静音,静音桌面、家庭 NAS+AI,800-1500,中国/开源广,高负载易降频,适合桌面AI原型开发验证,1.8B,7B
+4,谷歌 Coral Dev Board,Coral TPU,4 TOPS,TensorFlow Lite、Coral 模型库、轻量 LLM,4GB LPDDR4 + eMMC,12.8 GB/s,仅轻量 6B,千兆、USB3.0、PCIe,无风扇/静音,谷歌生态、IoT 原型,800-1200,美国/生态封闭,极其封闭、仅支持TFLite量化,仅限纯视觉或谷歌生态项目使用,N/A,3B
+5,谷歌 Coral Dev Board 2,Coral TPUv2,20 TOPS,TensorFlow Lite、EfficientNet、轻量 7B,8GB LPDDR4 + eMMC,25.6 GB/s,7B轻量、14B受限,千兆、USB3.0、PCIe,无风扇/静音,谷歌生态、轻量多模态,1200-1800,美国/生态封闭,大模型适配滞后,海外IoT视觉项目可考虑,0.5B,7B
+6,宇视 UniAI 盒子,寒武纪 MLU220,16 TOPS,寒武纪 SDK、LLaMA.cpp (MLU)、Qwen-7B,8GB/16GB LPDDR4X + eMMC,25.6 GB/s,7B量化可跑,千兆、PoE、串口、LoRa,风扇/低噪,安防周界、野外无网场景,1000-1800,中国/安防生态,软件栈封闭、通用LLM难调,专供安防视觉或周界测绘,1.8B,7B
+7,海康 DS-IE630N,自研 + FPGA,8 TOPS,海康 AI 模型、轻量检测、6B 量化,8GB LPDDR4 + eMMC,12.8 GB/s,仅 6B 量化,千兆、PoE、HDMI,风扇/低噪,人脸抓拍、8 路视频分析,800-1500,中国/安防强,不支持通用LLM框架,仅限海康体系内的传统视觉项目,N/A,6B
+8,大华 DH-EVS2100,自研 + FPGA,12 TOPS,大华 AI 平台、轻量 LLM、视频结构化,8GB/16GB LPDDR4 + eMMC,15 GB/s,6B流畅、7B卡顿,千兆、PoE、HDMI、RS232,风扇/低噪,16路视频结构化、园区安防,900-1600,中国/安防强,生态封闭、内存带宽低,园区安防监控系统首选,1.8B,7B
+9,Firefly AIBOX-1684X,算能 BM1684X,32 TOPS,算能 Sophon、LLaMA.cpp、Qwen-7B/14B,16GB LPDDR4X + NVMe,128 GB/s,7B满速、14B量化流畅,双千兆、HDMI、USB3.0、串口,风扇/低噪,家用/开发/边缘视觉,1800-2500,中国/成熟稳定,工具链需一定学习成本,高性价比的国产私有化LLM节点,7B,14B
+10,Radxa AirBox,算能 BM1684X,32 TOPS,算能 Sophon、LLaMA.cpp、Qwen-7B/14B,16GB LPDDR4X + NVMe,128 GB/s,同AIBOX-1684X,双千兆、USB3.0、Type-C,风扇/小巧,便携桌面、轻量部署,2000-2800,中国/资料偏少,社区技术支持较弱,适合有算能开发经验的极客/团队,7B,14B
+11,算能 SEA-BOX M1684,算能 BM1684,16 TOPS,算能 Sophon、LLaMA.cpp、Qwen-7B,8GB/16GB LPDDR4X + NVMe,32 GB/s,7B量化流畅,双千兆、HDMI、USB3.0,风扇/低噪,入门级边缘推理、低成本部署,1200-1800,中国/算能生态,旧架构带宽瓶颈明显,预算极其有限的边缘推理方案,1.8B,7B
+12,AMD Ryzen Embedded R2000,R2000 + Xilinx FPGA,40 TOPS,Xilinx Vitis AI、LLaMA.cpp、Qwen-14B,16GB/32GB DDR4 + NVMe,38.4 GB/s,7B/14B流畅、30B可跑,双千兆、DP、USB3.1、串口,风扇/工业级,工业控制、嵌入式AI、宽温,3000-5000,美国/工业稳定,功耗偏高、FPGA开发极难,兼顾X86工控与AI推理的复合场景,7B,32B
+13,全爱 后羿智盒,国产自研 SoC,50 TOPS,国产框架、LLaMA.cpp、Qwen-14B/30B,16GB/32GB LPDDR4X + NVMe,64 GB/s,14B/30B流畅,双网口、全接口、Type-C,无风扇/静音,卧室/桌面静音高性能,3000-4500,中国/商用生态,自研芯片框架兼容性存疑,需确认目标模型是否被官方支持,7B,32B
+14,冠弈 A261,国产自研 SoC,50 TOPS,国产推理框架、Qwen-7B/14B/30B,16GB LPDDR4X + NVMe,64 GB/s,7B/14B满速、30B量化,双千兆、DP、USB3.1,风扇/均衡,中端全能、多并发推理,3500-5000,中国/教程少,缺乏开源社区背书,建议先要求厂商提供POC测试,7B,14B
+15,NVIDIA Jetson Orin NX,Orin NX,100 TOPS,TensorRT、PyTorch、LLaMA2、Qwen 全系列,16GB LPDDR5 + NVMe,102 GB/s,7B/14B满速、30B量化流畅,双千兆、HDMI、USB3.2、M.2,风扇/均衡,机器人、自动驾驶、科研,3500-4500,美国/生态最强,相比国产方案溢价严重,具身智能和ROS机器人开发标配,7B,14B
+16,昇腾 310P 智盒,昇腾 310P,176 TOPS,昇腾 CANN、MindSpore、Qwen-30B/70B,32GB LPDDR4X + NVMe,68 GB/s,14B/30B/70B全流畅,多网口、PoE、宽温、串口,工业散热,企业信创、多路视频分析,7000-12000,中国/企业级,强绑定昇腾CANN生态,政务信创项目大模型落地的首选,14B,32B
+17,华为 Atlas 500 Pro,昇腾 310P,200+ TOPS,昇腾 CANN、MindSpore、全尺寸大模型,32GB LPDDR4X + NVMe,68 GB/s,7B~72B全模型通吃,PoE、多网口、串口、宽温,工业散热,行业旗舰、项目落地、恶劣环境,8000-15000,中国/性能天花板,体积大且部署成本高,高并发大流量的行业骨干节点,14B,70B
+18,NVIDIA Jetson AGX Orin,Orin AGX,272 TOPS,TensorRT、PyTorch、LLaMA2-70B、Qwen-72B,64GB LPDDR5 + NVMe,204 GB/s,7B~70B满血、100B量化,双万兆、HDMI2.1、USB3.2、PCIe,风扇/高功耗,高端机器人、AI研发、多模态训练,13000,美国/性能最强,满载功耗大发热量惊人,资金充足的研发机构或高端靶场,14B,70B
+19,寒武纪思元 370 边缘盒,思元 370,192 TOPS,寒武纪 Neuware、LLaMA.cpp、Qwen-30B/70B,32GB LPDDR4X + NVMe,128 GB/s,30B/70B量化流畅,双万兆、PCIe、串口,工业散热,云端推理下沉、企业级部署,6000-10000,中国/寒武纪生态,开源模型转换费时费力,原有寒武纪云端架构的下沉方案,14B,32B
+20,天数智芯 天枢 Edge,天数智芯 G10,128 TOPS,天数智芯 SDK、LLaMA.cpp、Qwen-30B/70B,32GB LPDDR4X + NVMe,128 GB/s,14B/30B满速、70B量化,双万兆、PCIe、宽温,工业散热,国产高端推理、信创项目,5000-8000,中国/自研生态,生态处于早期阶段,特定国产化替换指标的政企项目,14B,70B
+21,比特大陆 算能 SE5-16,算能 BM1684,16 TOPS,算能 Sophon、LLaMA.cpp、Qwen-7B,8GB/16GB LPDDR4X + NVMe,32 GB/s,7B量化流畅,双千兆、HDMI、USB3.0,风扇/低噪,边缘推理、低成本部署,1300-1900,中国/算能生态,属于上一代芯片将面临淘汰,作为算能新平台的过渡测试机,1.8B,7B
+22,ROC-RK3588S (瑞芯微),RK3588S,6 TOPS,LLaMA.cpp、Qwen-7B、端侧视觉模型,8GB/16GB LPDDR4X + NVMe,15 GB/s,6B/7B流畅、14B卡顿,双千兆、HDMI+DP、USB3.0,无风扇/静音,开源开发、NAS+AI、静音桌面,800-1600,中国/开源广,仅适合跑GGUF极简量化,不推荐作为严肃的业务主力机,1.8B,7B
+23,爱芯元智 AX650N,AX650N,24 TOPS,爱芯 SDK、LLaMA.cpp、Qwen-7B/14B,8GB/16GB LPDDR4X + eMMC,32 GB/s,7B流畅、14B量化,千兆、PoE、HDMI、MIPI,风扇/低噪,安防视觉、边缘计算、低功耗AI,1500-2200,中国/视觉强,Transformer优化较好但内存小,非常优秀的纯视觉/VLM模型前端,N/A,7B
+24,极摩客 EVO-X2,Ryzen 7 3750H + 独显,35 TOPS,PyTorch、TensorFlow、LLaMA.cpp、Qwen-14B,16GB/32GB DDR4 + NVMe,38.4 GB/s,7B/14B流畅、30B可跑,双千兆、HDMI、DP、USB3.1,风扇/高性能,迷你主机、AI桌面、多任务推理,2800-4000,中国/通用x86,能效比和纯AI算力不如ARM盒子,兼顾Windows办公与本地微型Agent,7B,14B
+25,H3C LinSeer MegaCube,国产自研 AI 芯片,64 TOPS,新华三 AI 平台、LLaMA.cpp、Qwen-30B,32GB LPDDR4X + NVMe,64 GB/s,14B/30B流畅、70B量化,双万兆、多网口、PCIe,工业散热,企业边缘、信创、高密度推理,6000-9000,中国/企业级,非主流方案可能面临支持断档,新华三整体网络解决方案的配套设备,14B,32B
+26,Tenstorrent QuietBox 2,Tenstorrent Grayskull,120 TOPS,RISC-V AI、PyTorch、LLaMA2、Qwen-30B,32GB LPDDR4 + NVMe,100 GB/s,14B/30B满速、70B量化,双万兆、PCIe、USB3.2,静音风扇/低噪,研发、低功耗大模型推理,7000-10000,加拿大/新锐生态,RISC-V生态极其匮乏,仅推荐高校前沿研究或架构实验室,14B,32B
+27,Deep X G20 Pro Max,国产高端 AI SoC,80 TOPS,深度框架适配、Qwen-14B/30B、多模态,32GB LPDDR5 + NVMe,120 GB/s,14B/30B流畅、70B可跑,双万兆、HDMI、USB3.2,风扇/高性能,多模态、本地大模型、AI工作站,5000-7500,中国/高端商用,自研框架遇到冷门模型容易报错,专用于特定国产大模型一体机交付,14B,32B
+28,灵启 AI 小盒子,RK3588,6 TOPS,LLaMA.cpp、Qwen-7B、轻量多模态,8GB/16GB LPDDR4X + NVMe,15 GB/s,6B/7B流畅、14B卡顿,千兆、HDMI、USB3.0,无风扇/静音,家用入门、AI学习、轻量推理,900-1600,中国/消费级,同质化严重做工一般,个人玩具或极小规模爬虫控制节点,1.8B,7B
+29,华为 Atlas 500 Mini,昇腾 310,88 TOPS,昇腾 CANN、MindSpore、Qwen-14B/30B,16GB LPDDR4X + eMMC,40 GB/s,7B/14B流畅、30B量化,千兆、PoE、串口,无风扇/静音,边缘小站、信创、静音部署,3500-5500,中国/企业级,算力上限不高且受限于16G内存,小微型网点的监控分析边缘节点,7B,14B
+30,机械革命 “龙虾盒子”,x86高性能 + 独显,50 TOPS,PyTorch、TensorFlow、LLaMA.cpp、Qwen-30B,32GB DDR4 + NVMe,256 GB/s,14B/30B流畅、70B可跑,双千兆、HDMI、DP、USB3.2,风扇/高性能,游戏级AI主机、本地大模型,4000-6500,中国/消费级高性能,体积庞大耗电量为工控机数倍,适合个人开发者作为本地大模型基站,7B,32B
+31,Tiiny AI Pocket Lab,专用低功耗 AI,8 TOPS,轻量 LLM、基础 NLP 指令、Qwen-6B,4GB/8GB LPDDR4 + eMMC,10 GB/s,6B极简量化,千兆、USB3.0、Type-C,无风扇/超静音,口袋AI、IoT边缘,600-1000,中国/便携微型,只能跑极低精度的残缺模型,不具备工业价值仅供演示,0.5B,3B
+32,NVIDIA Jetson Orin Nano,Orin Nano,40 TOPS,TensorRT/CUDA,8GB LPDDR5 + NVMe,68 GB/s,7B基础推理,千兆、DP、USB3.2、M.2,风扇/均衡,边缘部署、机器人,2500-3500,美国/生态好,8GB内存共享给显存后极度局促,轻量型无人车或巡检机器人的底座,3B,7B
+32.5,NVIDIA AGX Orin,2048-core,275 TOPS,Llama 3.2、Qwen 2.5,64GB LPDDR5 + NVMe,204 GB/s,70B (AWQ),双万兆、HDMI2.1、USB3.2、PCIe,风扇/高功耗,具身智能/靶场中枢,15800,生态无敌,价格贵,机器人靶场核心,14B,70B
+33.1,Orin Nano Super,1024-core,67 TOPS,Llama 3.1、Phi-3.5,8GB LPDDR5 + NVMe,102 GB/s,8B (流畅),千兆、DP、USB3.2、M.2,风扇/均衡,语音Agent节点,2499,带宽翻倍,显存小,法律交互终端标配,3B,8B
+33.7,算能 SE5-16,BM1684X,32 TOPS,DeepSeek、ChatGLM,16GB LPDDR4X + NVMe,128 GB/s,14B-20B,双千兆、HDMI、USB3.0,风扇/低噪,法律文档私有化,5100,国产适配强,驱动调优难,LawyerEase主力机,7B,14B
+34.3,ROC-RK3588S,RK3588,6 TOPS,TinyLlama、Qwen,16GB LPDDR4 + NVMe,15 GB/s,1.8B-3B,双千兆、HDMI+DP、USB3.0,无风扇/静音,律擎UI交互,1299,解码强,算力低,仅作UI/路由,0.5B,7B
+34.9,爱芯元智 AX650N,三核NPU,43 TOPS,LLaVA、CLIP,4GB LPDDR4X + eMMC,32 GB/s,视觉VLM,千兆、PoE、HDMI、MIPI,无风扇/低噪,靶场视觉分析,1950,Transformer效率高,内存太小,推荐视觉模块,N/A,3B
+35.5,Atlas 200 DK A2,Ascend 310B,16 TOPS,Pangu、MindSpore,8GB LPDDR4X + eMMC,50 GB/s,7B (Ascend),双千兆、USB3.0、Type-C,风扇/低噪,政务/信创项目,3100,合规性高,闭源生态,政府背景项目专用,1.8B,7B
+36.1,Mac Studio M2,M2 Max,N/A,全系列开源LLM,64GB Unified + SSD,400 GB/s,70B+,万兆、雷雳4、HDMI、USB-A,风扇/极静音,R&D/模型微调,14500,显存大/带宽极高,工业接口少,团队开发机标配,14B,70B
+36.7,Orange Pi 5 Plus,RK3588,6 TOPS,小型SLM,32GB LPDDR4 + NVMe,15 GB/s,1.8B,双2.5G、HDMI、USB3.0、Type-C,无风扇/需加散热,分布式实验,950,极度廉价,易过热,多节点网关实验,0.5B,7B
+37.3,算能云盒,BM1684X,32 TOPS,Llama 3、DeepSeek,12GB LPDDR4X + NVMe,128 GB/s,8B-14B,双千兆、USB3.0,风扇/工业级,法律代码辅助,4800,带宽优势,价格波动,适合中型网关,7B,14B
+37.9,极摩客 G3,Intel N100,N/A,Ollama(微型),16GB DDR4 + NVMe,12 GB/s,0.5B-1.5B,双2.5G、HDMI、USB3.2,风扇/低噪,硬件监控后台,680,X86易维护,无AI加速,仅作网关管理,0.5B,3B
+38.5,寒武纪 思元220,MLU220,16 TOPS,国产加速模型,4GB LPDDR4 + eMMC,25 GB/s,1.8B-3B,千兆、USB、串口,工业散热,工业智能巡检,2200,国产算力先驱,软件栈封闭,特定工业信创,1.8B,3B
+39.1,昆仑芯 R200,K200,256 TOPS,百度文心/开源LLM,32GB HBM + NVMe,512 GB/s,30B-70B,双万兆、PCIe 4.0,被动散热/服务器级,高端算力中心,18000,带宽极高,价格昂贵,法律行业大算力节点,14B,70B
+39.7,Khadas Edge2,RK3588,6 TOPS,轻量推理模型,16GB LPDDR4 + NVMe,15 GB/s,1.8B,Type-C、HDMI、USB3.0,风扇/超薄,嵌入式展示,2500,体积极小,溢价较高,展会便携演示,1.8B,7B
+40.3,海思 Hi3559A,双核NNIE,4 TOPS,视觉CNN模型,4GB LPDDR4 + eMMC,20 GB/s,N/A,多路视频接口、千兆,工业散热,靶场传统安防,3500,视觉稳定,不支持LLM,传统视觉残留项目,N/A,N/A
+40.9,算能 SE6-32,BM1688,32 TOPS,DeepSeek-R1,16GB LPDDR4 + NVMe,64 GB/s,8B-14B,双千兆、HDMI、USB3.0,风扇/低噪,法律Agent协同,4200,功耗比优秀,带宽略低,适合多Agent部署,7B,14B
+41.5,Jetson AGX Xavier,512-core Vol,32 TOPS,旧版开源模型,32GB LPDDR4 + NVMe,137 GB/s,7B,双千兆、HDMI、USB3.1、PCIe,风扇/均衡,靶场兼容性开发,5500,存量大/易买,性能落后,旧项目维护,7B,32B
+42.1,树莓派 5 (8GB),BCM2712,N/A,小型SLM (CPU),8GB LPDDR5 + TF卡,8 GB/s,0.5B,千兆、微型HDMI、USB3.0,风扇/低噪,传感器采集端,650,社区最强,性能差,仅作传感器数据采集,0.5B,1.8B
+42.7,鲁班猫 5,RK3588,6 TOPS,TinyLlama,16GB LPDDR4 + TF/eMMC,15 GB/s,1.8B,双千兆、HDMI、USB3.0,无风扇/需加散热,教育/实验,1150,资料详尽,做工一般,研发原型快速验证,1.8B,7B
+43.3,英特尔 NUC 14,Core Ultra 7,34 TOPS,OpenVINO优化LLM,64GB DDR5 + NVMe,45 GB/s,7B-14B,双2.5G、雷电4、HDMI,风扇/低噪,X86本地Agent,6500,通用性极强,GPU内存共享慢,X86环境法律软件,3B,32B
+43.9,华为 Atlas 500,Ascend 310,22 TOPS,华为Pangu,16GB LPDDR4 + eMMC,40 GB/s,7B,双千兆、PoE、串口,无风扇/工业级静音,靶场边缘计算柜,12000,工业级防护,笨重且贵,靶场室外节点,7B,14B
+44.5,比特大陆 SE7,BM1690,128 TOPS,DeepSeek-V3全系,64GB LPDDR5 + NVMe,256 GB/s,70B,双万兆、PCIe、USB,风扇/高风噪,私有化LLM中心,22000,算力/带宽平衡,渠道稀缺,律所级机房选型,14B,72B
+45.1,芯原 MicroAI,NPU-8000,10 TOPS,极微型语音模型,2GB LPDDR3 + eMMC,8 GB/s,N/A,USB、GPIO、音频口,无风扇/极静音,语音唤醒端,800,功耗极低,性能受限,办公桌语音唤醒器,N/A,N/A
+45.7,香橙派 AI Pro,Ascend 310B,20 TOPS,昇腾全系模型,16GB LPDDR4 + eMMC,50 GB/s,7B,双千兆、HDMI、Type-C,风扇/低噪,国产算力平替,1099,性价比极高,生态链待成熟,团队昇腾开发机,1.8B,14B
+46.3,米尔 Jetson Orin,Orin NX,100 TOPS,Llama 3 (8B),16GB LPDDR5 + NVMe,102 GB/s,8B-14B,双千兆、CAN、USB3.2,风扇/工业级,靶场巡检机器人,5800,紧凑高效,散热压力大,移动机器人底座,7B,14B
+46.9,ASUS PE2000,Intel Atom,N/A,通用自动化模型,16GB DDR4 + SSD,12 GB/s,N/A,多串口、多千兆网口,无风扇/宽温,工业现场控制,4500,稳定性极高,无AI算力,纯工业控制流,N/A,N/A
+47.5,地平线 旭日 X3,BPU 2.0,5 TOPS,视觉大模型理解,4GB LPDDR4 + eMMC,15 GB/s,N/A,千兆、HDMI、MIPI,无风扇/需加散热,靶场低成本监控,450,视觉识别强,不支持LLM,传感器阵列控制,N/A,N/A
+48.1,天数智芯 智铠100,MR100,64 TOPS,国产通用模型,16GB LPDDR4 + NVMe,120 GB/s,14B,PCIe、千兆,风扇/工业级,信创办公加速,6500,兼容主流框架,生态建设中,国产办公PC加速,7B,14B
+48.7,摩尔线程 MTT S30,MUSA架构,20 TOPS,MUSA优化大模型,8GB LPDDR4 + NVMe,40 GB/s,7B,HDMI、DP、USB,风扇/均衡,国产显卡适配测试,3200,硬件设计先进,驱动不稳定,兼容性测试平台,1.8B,7B
+49.3,算能 SE5-8,BM1684X,32 TOPS,Qwen、ChatGLM,8GB LPDDR4X + NVMe,128 GB/s,7B-8B,双千兆、HDMI、USB3.0,风扇/低噪,法律摘要网关,3900,带宽充足,内存小,法律搜索辅助机,3B,8B
+49.9,瑞芯微 RK3576,RK3576,2 TOPS,极微型模型,4GB LPDDR4 + eMMC,10 GB/s,N/A,千兆、HDMI、USB3.0,无风扇/静音,智能桌牌展示,550,极低成本,仅能跑交互,LawyerEase衍生硬件,0.5B,1.8B
+50.5,雷神 AI Box,RTX 4060M,233 TOPS,Stable Diffusion,8GB GDDR6 + NVMe,256 GB/s,8B-14B,双千兆、雷电、HDMI2.1,风扇/游戏本级,法律海报/多媒体,5800,绘图能力强,功耗高,法律多媒体生成,7B,8B
+51.1,自定义 FPGA 盒,Xilinx Zynq,N/A,硬件级定制模型,16GB DDR4 + TF/eMMC,30 GB/s,N/A,千兆、FMC、GPIO、CAN,无风扇/工业级,机器人低延迟控制,8000,延迟极低,开发成本极大,机器人关节控制器,N/A,N/A
