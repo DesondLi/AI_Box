@@ -19,6 +19,18 @@ from .rag import (
     TrendType,
     AnomalySeverity,
 )
+from .llm import (
+    ILLMCompletion,
+    ILLMChat,
+    ILLMEmbedding,
+    ILLMCostTracker,
+    ChatRole,
+    ChatMessage,
+    CompletionUsage,
+    CompletionResult,
+    EmbeddingResult,
+    ModelInfo,
+)
 
 __all__ = [
     "IPlugin",
@@ -37,4 +49,15 @@ __all__ = [
     "RetrievalResult",
     "TrendType",
     "AnomalySeverity",
+    # LLM Engine
+    "ILLMCompletion",
+    "ILLMChat",
+    "ILLMEmbedding",
+    "ILLMCostTracker",
+    "ChatRole",
+    "ChatMessage",
+    "CompletionUsage",
+    "CompletionResult",
+    "EmbeddingResult",
+    "ModelInfo",
 ]

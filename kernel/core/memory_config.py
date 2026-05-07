@@ -8,7 +8,7 @@
 """
 
 import uuid
-from typing import Any, Callable, Dict
+from typing import Any, Callable, Dict, Optional, Tuple
 from fnmatch import fnmatch
 
 from kernel.interfaces import IConfigRegistry
@@ -70,3 +70,26 @@ class MemoryConfigRegistry(IConfigRegistry):
         """批量加载配置"""
         for key, value in config_dict.items():
             self.set(key, value)
+
+    # --- 持久化接口（内存实现为空操作）---
+
+    def save(self, path: Optional[str] = None) -> None:
+        """内存配置不需要保存，空操作"""
+        pass
+
+    def load(self, path: Optional[str] = None) -> None:
+        """内存配置不需要加载，空操作"""
+        pass
+
+    def enable_hotreload(self, path: Optional[str] = None, interval: float = 1.0) -> None:
+        """内存配置不支持热重载，空操作"""
+        pass
+
+    def disable_hotreload(self) -> None:
+        """禁用热重载"""
+        pass
+
+    @property
+    def has_hotreload(self) -> bool:
+        """内存配置不支持热重载"""
+        return False

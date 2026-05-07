@@ -9,6 +9,7 @@ from .kernel import MicroKernel
 from .plugin_registry import PluginRegistry
 from .memory_message_bus import MemoryMessageBus
 from .memory_config import MemoryConfigRegistry
+from .file_config import FileConfigRegistry
 from .console_logger import ConsoleLoggerFactory
 
 __all__ = [
@@ -16,5 +17,6 @@ __all__ = [
     "PluginRegistry",
     "MemoryMessageBus",
     "MemoryConfigRegistry",
+    "FileConfigRegistry",
     "ConsoleLoggerFactory",
 ]

@@ -8,6 +8,7 @@
 """
 
 import asyncio
+from pathlib import Path
 from typing import Optional, Any
 
 from kernel.interfaces import (
@@ -17,6 +18,7 @@ from kernel.interfaces import (
 from kernel.core.plugin_registry import PluginRegistry
 from kernel.core.memory_message_bus import MemoryMessageBus
 from kernel.core.memory_config import MemoryConfigRegistry
+from kernel.core.file_config import FileConfigRegistry
 from kernel.core.console_logger import ConsoleLoggerFactory
 
 
@@ -53,11 +55,45 @@ class KernelContext(IKernelContext):
 class MicroKernel:
     """微内核核心"""
 
-    def __init__(self):
+    def __init__(
+        self,
+        config_backend: str = "memory",  # "memory" 或 "file"
+        config_path: Optional[str] = None,
+        config_format: str = "json",
+        auto_save: bool = True,
+        hot_reload: bool = False,
+    ):
+        """
+        创建微内核
+
+        Args:
+            config_backend: 配置后端："memory"（内存）或 "file"（文件）
+            config_path: 配置文件路径（仅 file 后端）
+            config_format: 文件格式：json / yaml（仅 file 后端）
+            auto_save: 是否自动保存配置变更（仅 file 后端）
+            hot_reload: 是否启用文件热重载（仅 file 后端）
+        """
         self._plugin_registry = PluginRegistry()
-        self._config = MemoryConfigRegistry()
         self._logger_factory = ConsoleLoggerFactory()
         self._message_bus = MemoryMessageBus()
+
+        # 初始化配置后端
+        if config_backend == "file":
+            self._config = FileConfigRegistry(
+                file_path=config_path,
+                file_format=config_format,
+                auto_save=auto_save,
+            )
+            # 尝试加载已存在的配置
+            if config_path and Path(config_path).exists():
+                self._config.load()
+            # 启用热重载
+            if hot_reload:
+                self._config.enable_hotreload()
+        else:
+            self._config = MemoryConfigRegistry()
+
+        self._config_backend = config_backend
         self._logger = self._logger_factory.for_plugin("kernel")
         self._running = False
 

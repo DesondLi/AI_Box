@@ -5,7 +5,19 @@
       "Bash(pip install *)",
       "Bash(git init *)",
       "Bash(git remote *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Skill(remember)",
+      "Bash(rtk coverage *)",
+      "Bash(ls -d .worktrees)",
+      "Bash(ls -d worktrees)",
+      "Bash(git worktree *)",
+      "Bash(pytest tests/ -v --tb=short)",
+      "Bash(pip show *)",
+      "Bash(pytest tests/test_rag_bridge.py -v --tb=short)"
     ]
   }
 }
